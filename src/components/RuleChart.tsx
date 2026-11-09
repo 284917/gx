@@ -3,7 +3,7 @@ import { scaleLinear, scalePoint } from "d3-scale";
 import { useMemo, useRef, useState } from "react";
 import { years, statusLabel, type YearPoint } from "../data/rule";
 import { EASE, fmt, useMeasure } from "../lib/hooks";
-import { Chip, Cite } from "./ui";
+import { Chip } from "./ui";
 
 const Y_MIN = 30;
 const Y_MAX = 80;
@@ -290,8 +290,7 @@ export function RuleChart() {
           <Legend swatch={<span className="h-3 w-2 rounded-sm border border-pause bg-pause/30" />} label="Пауза или другая формула" />
         </ul>
         <p className="caption-5 max-w-sm text-faint md:text-right">
-          Нажмите или наведите на год. Для 2024 года в использованных источниках нет сводной средней цены Urals.{" "}
-          <Cite ids={[1, 2, 3, 6, 11, 17, 18, 19, 20, 21, 22, 23]} />
+          Нажмите или наведите на год. Для 2024 года сводной средней цены Urals нет.
         </p>
       </figcaption>
     </figure>

@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { events, statusLabel, type RuleStatus } from "../data/rule";
 import { EASE } from "../lib/hooks";
-import { Chip, Cite, SectionHeader } from "./ui";
+import { Chip, SectionHeader } from "./ui";
 
 const toneOf = (s: RuleStatus) => (s === "active" ? "neutral" : s === "proposed" ? "oil" : "pause") as "neutral" | "oil" | "pause";
 
@@ -135,7 +135,7 @@ export function Timeline() {
                     </div>
                     <h3 className="heading-6 mt-3 text-fg">{e.title}</h3>
                     <p className="body-6 mt-2 text-muted">
-                      {e.text} <Cite ids={e.sources} />
+                      {e.text}
                     </p>
                   </article>
                 </li>

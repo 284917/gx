@@ -2,7 +2,7 @@ import { CalendarCheck, CheckCircle, Lightning, MagnifyingGlass, XCircle } from 
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { EASE } from "../lib/hooks";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 const steps = [
   {
@@ -50,7 +50,7 @@ export function Proposal() {
               </Reveal>
             ))}
             <p className="caption-5 text-faint">
-              Идея гибкости с ограничением по величине и сроку отступления близка к предложениям Е. Т. Гурвича и И. А. Соколова. <Cite ids={[25]} />
+              Идея гибкости с ограничением по величине и сроку отступления близка к предложениям Е. Т. Гурвича и И. А. Соколова.
             </p>
           </ol>
 

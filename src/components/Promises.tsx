@@ -3,7 +3,7 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 import { promises2027 } from "../data/rule";
 import { EASE, fmt } from "../lib/hooks";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 const MAX = 70;
 const BAR_H = 240;
@@ -71,7 +71,7 @@ export function Promises() {
                     <div className="mt-4 border-t border-line pt-4">
                       <p className="title-4 num text-fg">{p.when}</p>
                       <p className="caption-5 mt-1 text-muted">
-                        {p.label} <Cite ids={p.sources} />
+                        {p.label}
                       </p>
                     </div>
                   </div>
@@ -94,7 +94,7 @@ export function Promises() {
               <CurrencyRub className="h-6 w-6 text-oil" />
               <p className="title-2 mt-4 text-fg">Каждый доллар цены отсечения стоит от 0,4 до 0,6 % курса рубля</p>
               <p className="body-6 mt-2 text-muted">
-                Так оценивает связь Дмитрий Полевой, инвестиционный директор УК «Астра Управление активами». Ниже отсечка, больше покупок валюты, слабее рубль. <Cite ids={[7]} />
+                Так оценивает связь Дмитрий Полевой, инвестиционный директор УК «Астра Управление активами». Ниже отсечка, больше покупок валюты, слабее рубль.
               </p>
             </div>
           </Reveal>
@@ -103,7 +103,7 @@ export function Promises() {
               <span className="heading-5 num text-oil">≈ 4 ₽</span>
               <p className="title-2 mt-4 text-fg">на столько, по оценке БКС, ослабнет среднегодовой курс 2027 года при отсечке 50 $</p>
               <p className="body-6 mt-2 text-muted">
-                Оценка аналитика «БКС Мир инвестиций» Ильи Фёдорова. Это прогноз, а не факт, но он показывает цену каждого пересмотра для рынка. <Cite ids={[24]} />
+                Оценка аналитика «БКС Мир инвестиций» Ильи Фёдорова. Это прогноз, а не факт, но он показывает цену каждого пересмотра для рынка.
               </p>
             </div>
           </Reveal>

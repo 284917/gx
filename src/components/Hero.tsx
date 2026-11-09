@@ -3,7 +3,6 @@ import { animate, motion, useInView, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { EASE } from "../lib/hooks";
 import { RuleChart } from "./RuleChart";
-import { Cite } from "./ui";
 
 const stats = [
   { n: 4, label: "пересмотра параметров правила с 2022 года", cite: [3, 5, 11] },
@@ -61,7 +60,7 @@ export function Hero() {
               <dd>
                 <CountUp to={s.n} className="heading-3 num block text-fg" />
                 <span className="caption-2 mt-2 block text-muted">
-                  {s.label} <Cite ids={s.cite} />
+                  {s.label}
                 </span>
               </dd>
             </div>

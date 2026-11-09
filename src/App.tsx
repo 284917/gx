@@ -1,4 +1,4 @@
-import { Faq, FinalCta, Footer, Sources } from "./components/Closing";
+import { Faq, FinalCta, Footer } from "./components/Closing";
 import { Hero } from "./components/Hero";
 import { Mechanism } from "./components/Mechanism";
 import { Nav } from "./components/Nav";
@@ -36,7 +36,6 @@ export default function App() {
         <Proposal />
         <Faq />
         <FinalCta />
-        <Sources />
       </main>
       <Footer />
     </>

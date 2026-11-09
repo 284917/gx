@@ -2,10 +2,9 @@ import { ArrowRight, ArrowUp, Plus } from "@phosphor-icons/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { site } from "../content/site";
-import { sources } from "../data/sources";
 import { EASE } from "../lib/hooks";
 import { Logo } from "./Logo";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 export const FAQ: { q: string; a: string; cite?: number[] }[] = [
   {
@@ -49,7 +48,7 @@ export const FAQ: { q: string; a: string; cite?: number[] }[] = [
   },
   {
     q: "Откуда данные?",
-    a: "Данные Минфина и Минэкономразвития в публикациях Интерфакса, ТАСС, The Moscow Times (Reuters), «Эксперта», Финмаркета и КонсультантПлюс, а также научные статьи. Полный список ниже.",
+    a: "Данные Минфина и Минэкономразвития в публикациях Интерфакса, ТАСС, The Moscow Times (Reuters), «Эксперта», Финмаркета и КонсультантПлюс, а также научные статьи.",
   },
 ];
 
@@ -88,7 +87,7 @@ export function Faq() {
                         transition={{ duration: 0.4, ease: EASE }}
                       >
                         <p className="body-6 px-4 pb-4 text-muted md:px-6 md:pb-6">
-                          {f.a} {f.cite && <Cite ids={f.cite} />}
+                          {f.a} 
                         </p>
                       </motion.div>
                     )}
@@ -127,32 +126,6 @@ export function FinalCta() {
   );
 }
 
-export function Sources() {
-  return (
-    <section id="sources" aria-labelledby="sources-title" className="px-4 py-24 md:px-8">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeader id="sources-title" eyebrow="Источники" title="Откуда цифры" lead={`Каждая цифра на странице ведёт сюда. Ссылки проверены ${site.dataDate}.`} />
-        <ol className="mt-12 grid gap-x-12 gap-y-3 md:grid-cols-2">
-          {sources.map((s) => (
-            <li key={s.id} id={`source-${s.id}`} className="caption-2 flex scroll-mt-24 gap-3 rounded-lg text-muted target:text-fg">
-              <span className="num w-6 shrink-0 text-right text-faint">{s.id}.</span>
-              <span className="min-w-0 break-words">
-                {s.text}{" "}
-                {s.url && (
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="break-all text-oil/80 underline decoration-oil/30 underline-offset-2 transition-colors duration-300 ease-soft hover:text-oil">
-                    {s.url.replace(/^https?:\/\//, "").slice(0, 48)}
-                    {s.url.replace(/^https?:\/\//, "").length > 48 ? "…" : ""}
-                  </a>
-                )}
-              </span>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
-  );
-}
-
 export function Footer({ home = true }: { home?: boolean }) {
   const byline = [site.author, site.affiliation, site.advisor].filter(Boolean).join(" · ");
   return (
@@ -163,19 +136,11 @@ export function Footer({ home = true }: { home?: boolean }) {
             <Logo className="h-6 w-6" />
             <span className="title-4 text-fg">Отсечка</span>
           </a>
-          <p className="caption-2 mt-3 text-muted">
-            Материал к докладу «Бюджетное правило в России как институт» на VIII Горчаковских чтениях, РАНХиГС, Санкт-Петербург, ноябрь 2026 года.
-          </p>
           {byline && <p className="caption-2 mt-2 text-fg">{byline}</p>}
           <p className="caption-5 mt-3 text-faint">Данные актуальны на {site.dataDate}. Это учебный проект, а не инвестиционная рекомендация.</p>
         </div>
         <nav aria-label="Ссылки в подвале">
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
-            <li>
-              <a href={home ? "#sources" : "/#sources"} className="caption-1 text-muted transition-colors duration-300 ease-soft hover:text-fg">
-                Источники
-              </a>
-            </li>
             <li>
               <a href="/privacy" className="caption-1 text-muted transition-colors duration-300 ease-soft hover:text-fg">
                 Конфиденциальность

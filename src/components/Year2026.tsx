@@ -2,7 +2,7 @@ import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "fr
 import { useLayoutEffect, useRef, useState } from "react";
 import { CURRENT_CUTOFF, year2026, type Moment } from "../data/rule";
 import { EASE, fmt, useMediaQuery } from "../lib/hooks";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 const toneDot: Record<Moment["tone"], string> = {
   neutral: "bg-fg",
@@ -119,7 +119,7 @@ function Card({ m, i }: { m: Moment; i: number }) {
           </div>
           <h3 className="heading-6 mt-4 text-fg">{m.title}</h3>
           <p className="body-6 mt-2 text-muted">
-            {m.text} <Cite ids={m.sources} />
+            {m.text}
           </p>
           {m.urals !== undefined && <Gauge value={m.urals} />}
         </article>

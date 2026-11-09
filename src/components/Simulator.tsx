@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useId, useState } from "react";
 import { CURRENT_CUTOFF, RUBLE_PER_DOLLAR_MAX, RUBLE_PER_DOLLAR_MIN } from "../data/rule";
 import { EASE, fmt, useMeasure } from "../lib/hooks";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 type Preset = {
   label: string;
@@ -134,7 +134,7 @@ export function Simulator() {
                   >
                     <p className="title-4 num text-oil">{preset.label}</p>
                     <p className="body-6 mt-1 text-muted">
-                      {preset.note} <Cite ids={preset.cite} />
+                      {preset.note}
                     </p>
                   </motion.div>
                 )}
@@ -176,7 +176,7 @@ export function Simulator() {
                 />
               </dl>
               <p className="caption-5 text-faint">
-                Учебная модель на один баррель. Она не считает объёмы экспорта и налоговые формулы, поэтому показывает направление и пропорции, а не суммы в бюджете. Эффект для курса: 0,4…0,6 % на каждый доллар отсечки <Cite ids={[7]} />
+                Учебная модель на один баррель. Она не считает объёмы экспорта и налоговые формулы, поэтому показывает направление и пропорции, а не суммы в бюджете. Эффект для курса: 0,4…0,6 % на каждый доллар отсечки
               </p>
             </div>
           </div>

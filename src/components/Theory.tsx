@@ -1,5 +1,5 @@
 import { Handshake, Scales, SlidersHorizontal } from "@phosphor-icons/react";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 const ideas = [
   {
@@ -45,7 +45,7 @@ export function Theory() {
                 <p className="caption-4 num mt-6 text-faint">{d.who}</p>
                 <h3 className="heading-6 mt-1 text-fg">{d.title}</h3>
                 <p className="body-6 mt-3 text-muted">
-                  {d.text} <Cite ids={d.cite} />
+                  {d.text}
                 </p>
               </article>
             </Reveal>

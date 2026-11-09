@@ -4,7 +4,7 @@ import { area, curveMonotoneX, line } from "d3-shape";
 import { useRef } from "react";
 import { reserves } from "../data/rule";
 import { EASE, fmt, useMeasure } from "../lib/hooks";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 export function Reserves() {
   const [wrap, { width }] = useMeasure<HTMLDivElement>();
@@ -89,7 +89,7 @@ export function Reserves() {
                 </svg>
               </div>
               <p className="caption-5 mt-4 text-faint">
-                The Moscow Times и Интерфакс по данным Минфина <Cite ids={[13, 14, 15, 16]} />
+                По данным Минфина
               </p>
             </figure>
           </Reveal>

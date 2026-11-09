@@ -2,7 +2,7 @@ import { ArrowCounterClockwise, Coins, Lock, PencilSimpleLine, Prohibit, RocketL
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { EASE } from "../lib/hooks";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 type Kind = "down" | "up" | "pressure" | "boom" | "calm";
 type Choice = "hold" | "rewrite" | "escape";
@@ -199,7 +199,7 @@ export function TrustGame() {
         </Reveal>
 
         <p className="caption-5 mt-4 max-w-[680px] text-faint">
-          Учебная модель. Коэффициенты условные: она показывает логику достоверного обязательства из работ Кидланда и Прескотта и Норта и Вайнгаста, а не прогнозирует курс. <Cite ids={[26, 27]} />
+          Учебная модель. Коэффициенты условные: она показывает логику достоверного обязательства из работ Кидланда и Прескотта и Норта и Вайнгаста, а не прогнозирует курс.
         </p>
       </div>
     </section>

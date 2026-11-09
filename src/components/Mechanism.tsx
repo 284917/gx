@@ -2,7 +2,7 @@ import { Bank, Vault } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { EASE, useMeasure } from "../lib/hooks";
-import { Cite, Reveal, SectionHeader } from "./ui";
+import { Reveal, SectionHeader } from "./ui";
 
 const steps = [
   {
@@ -57,7 +57,7 @@ export function Mechanism() {
                     <div>
                       <h3 className={`title-2 transition-colors duration-500 ease-soft ${lit ? "text-fg" : "text-muted"}`}>{s.title}</h3>
                       <p className="body-6 mt-1 text-muted">
-                        {s.text} <Cite ids={s.cite} />
+                        {s.text}
                       </p>
                     </div>
                   </div>

@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 import { EASE } from "../lib/hooks";
-import { sources } from "../data/sources";
 
 /** Section entering the viewport: rises 32px and fades in once (B7) */
 export function Reveal({
@@ -27,31 +26,6 @@ export function Reveal({
     >
       {children}
     </Comp>
-  );
-}
-
-/** Inline citation: [3; 5] linking to the sources list */
-export function Cite({ ids }: { ids: number[] }) {
-  return (
-    <span className="caption-5 num whitespace-nowrap align-super text-faint">
-      [
-      {ids.map((id, i) => {
-        const s = sources.find((x) => x.id === id);
-        return (
-          <span key={id}>
-            {i > 0 && "; "}
-            <a
-              href={`#source-${id}`}
-              title={s?.text}
-              className="rounded-sm transition-colors duration-300 ease-soft hover:text-oil"
-            >
-              {id}
-            </a>
-          </span>
-        );
-      })}
-      ]
-    </span>
   );
 }
 
