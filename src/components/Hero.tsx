@@ -21,12 +21,8 @@ export function Hero() {
   return (
     <section id="top" aria-labelledby="hero-title" className="relative px-4 pb-16 pt-24 md:px-8 md:pb-24">
       <div className="mx-auto max-w-6xl">
-        <motion.p {...fade(0)} className="caption-4 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 text-muted">
-          <span className="h-1.5 w-1.5 rounded-full bg-oil" />
-          VIII Горчаковские чтения · РАНХиГС · ноябрь 2026
-        </motion.p>
 
-        <motion.h1 {...fade(0.08)} id="hero-title" className="heading-3 sm:heading-2 md:heading-1 hero-gradient mt-6 max-w-[680px] pb-1">
+        <motion.h1 {...fade(0.08)} id="hero-title" className="heading-3 sm:heading-2 md:heading-1 hero-gradient mt-4 max-w-[680px] pb-1">
           Правило, которое
           <br />
           переписывают
