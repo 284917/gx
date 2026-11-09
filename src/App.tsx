@@ -7,7 +7,6 @@ import { Proposal } from "./components/Proposal";
 import { Reserves } from "./components/Reserves";
 import { Simulator } from "./components/Simulator";
 import { TaglineReveal } from "./components/TaglineReveal";
-import { Theory } from "./components/Theory";
 import { Timeline } from "./components/Timeline";
 import { Year2026 } from "./components/Year2026";
 
@@ -30,7 +29,6 @@ export default function App() {
         <Year2026 />
         <Reserves />
         <Simulator />
-        <Theory />
         <Proposal />
         <Faq />
         <FinalCta />

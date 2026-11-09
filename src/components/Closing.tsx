@@ -57,7 +57,7 @@ export function Faq() {
   return (
     <section id="faq" aria-labelledby="faq-title" className="px-4 py-24 md:px-8">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
-        <SectionHeader id="faq-title" eyebrow="09 · Вопросы" title="Коротко о главном" lead="Ответы на вопросы, которые чаще всего задают после доклада." />
+        <SectionHeader id="faq-title" eyebrow="08 · Вопросы" title="Коротко о главном" lead="Ответы на вопросы, которые чаще всего задают после доклада." />
         <Reveal>
           <ul className="flex flex-col gap-2">
             {FAQ.map((f, i) => {
