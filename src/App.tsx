@@ -1,4 +1,5 @@
-import { Faq, FinalCta, Footer } from "./components/Closing";
+import { FinalCta, Footer } from "./components/Closing";
+import { Faq } from "./components/Faq";
 import { Hero } from "./components/Hero";
 import { Mechanism } from "./components/Mechanism";
 import { Nav } from "./components/Nav";
