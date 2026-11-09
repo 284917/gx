@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@import "@fontsource-variable/manrope";
+@import "@fontsource/geist-mono/400.css";
+@import "@fontsource/geist-mono/500.css";
+
+/* Design tokens. Values follow .claude/skills/landing-page-design (Part B). */
+@theme {
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  /* Dark surfaces: only the approved set */
+  --color-ink: #131209;
+  --color-void: #000000;
+  --color-surface-1: #181818;
+  --color-surface-2: #1f1f1f;
+  --color-surface-3: #272727;
+  --color-surface-4: #313131;
+
+  --color-fg: #f5f1e8;
+  --color-muted: #9b9b9b;
+  --color-faint: #6b6760;
+  --color-line: rgb(245 241 232 / 0.1);
+  --color-line-strong: rgb(245 241 232 / 0.18);
+
+  /* Data colours */
+  --color-oil: #f2a93b;
+  --color-cut: #f5f1e8;
+  --color-inflow: #7cc4a4;
+  --color-outflow: #e5675a;
+  --color-pause: #8f8a80;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Named text styles (B1). Use these instead of loose size and weight utilities. */
+@utility heading-1 { font-size: 3.75rem; line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+@utility heading-2 { font-size: 3rem; line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+@utility heading-3 { font-size: 2.25rem; line-height: 2.5rem; font-weight: 600; letter-spacing: -0.015em; }
+@utility heading-4 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 600; letter-spacing: -0.01em; }
+@utility heading-5 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; }
+@utility heading-6 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; }
+@utility title-1 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 500; }
+@utility title-2 { font-size: 1.125rem; line-height: 1.75rem; font-weight: 500; }
+@utility title-3 { font-size: 1rem; line-height: 1.5rem; font-weight: 500; }
+@utility title-4 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; }
+@utility title-5 { font-size: 0.75rem; line-height: 1rem; font-weight: 500; }
+@utility body-1 { font-size: 1rem; line-height: 1.5rem; font-weight: 600; }
+@utility body-2 { font-size: 1rem; line-height: 1.5rem; font-weight: 500; }
+@utility body-3 { font-size: 1rem; line-height: 1.5rem; font-weight: 400; }
+@utility body-4 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+@utility body-5 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; }
+@utility body-6 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 400; }
+@utility button-lg { font-size: 1.125rem; line-height: 1.75rem; font-weight: 600; }
+@utility button-md { font-size: 1rem; line-height: 1.5rem; font-weight: 600; }
+@utility button-sm { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+@utility button-xsm { font-size: 0.75rem; line-height: 1rem; font-weight: 600; }
+@utility caption-1 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; }
+@utility caption-2 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 400; }
+@utility caption-3 { font-size: 0.75rem; line-height: 1rem; font-weight: 600; }
+@utility caption-4 { font-size: 0.75rem; line-height: 1rem; font-weight: 500; }
+@utility caption-5 { font-size: 0.75rem; line-height: 1rem; font-weight: 400; }
+
+@utility hero-gradient {
+  background-image: linear-gradient(90deg, #ffffff, #9b9b9b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility ease-soft { transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+    background: var(--color-ink);
+    color-scheme: dark;
+  }
+  body {
+    background: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+  p, li, dd, figcaption { text-wrap: pretty; }
+  ::selection { background: rgb(242 169 59 / 0.35); color: var(--color-fg); }
+  :focus-visible {
+    outline: 2px solid var(--color-oil);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  .num { font-family: var(--font-mono); font-feature-settings: "tnum" 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Particles in the simulator flow. Only transform and opacity move. */
+@keyframes flow-x {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate3d(var(--flow-dist, 120px), 0, 0); opacity: 0; }
+}
+@keyframes flow-y {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate3d(0, var(--flow-dist, 120px), 0); opacity: 0; }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.pulse-ring { transform-box: fill-box; transform-origin: center; animation: pulse-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+
+/* Range inputs */
+input[type="range"].range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 24px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"].range::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--track-fill, var(--color-oil)) var(--pct, 50%), var(--color-surface-4) var(--pct, 50%));
+}
+input[type="range"].range::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--color-surface-4);
+}
+input[type="range"].range::-moz-range-progress {
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--track-fill, var(--color-oil));
+}
+input[type="range"].range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: 9999px;
+  background: var(--color-fg);
+  border: 4px solid var(--color-ink);
+  box-shadow: 0 0 0 1px var(--color-line-strong);
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+input[type="range"].range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: var(--color-fg);
+  border: 4px solid var(--color-ink);
+  box-shadow: 0 0 0 1px var(--color-line-strong);
+}
+input[type="range"].range:active::-webkit-slider-thumb { transform: scale(1.15); }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
