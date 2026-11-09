@@ -8,7 +8,6 @@ export const NAV_LINKS = [
   { id: "timeline", label: "Хронология" },
   { id: "year2026", label: "2026" },
   { id: "simulator", label: "Симулятор" },
-  { id: "trust", label: "Доверие" },
   { id: "proposal", label: "Выводы" },
   { id: "faq", label: "Вопросы" },
 ];

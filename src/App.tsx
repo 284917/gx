@@ -9,7 +9,6 @@ import { Simulator } from "./components/Simulator";
 import { TaglineReveal } from "./components/TaglineReveal";
 import { Theory } from "./components/Theory";
 import { Timeline } from "./components/Timeline";
-import { TrustGame } from "./components/TrustGame";
 import { Year2026 } from "./components/Year2026";
 
 export default function App() {
@@ -31,7 +30,6 @@ export default function App() {
         <Year2026 />
         <Reserves />
         <Simulator />
-        <TrustGame />
         <Theory />
         <Proposal />
         <Faq />
